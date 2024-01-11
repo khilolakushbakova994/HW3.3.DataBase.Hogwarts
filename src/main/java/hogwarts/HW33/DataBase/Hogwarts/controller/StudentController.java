@@ -5,6 +5,8 @@ import hogwarts.HW33.DataBase.Hogwarts.service.StudentService;
 import hogwarts.HW33.DataBase.Hogwarts.model.Student;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -46,6 +48,10 @@ public class StudentController {
     public ResponseEntity<Student> removeStudent(@PathVariable Long id) {
         studentService.removeStudent(id);
         return ResponseEntity.ok().build();
+    }
+    @GetMapping
+    public ResponseEntity<Collection<Student>> getAllStudents(){
+        return ResponseEntity.ok(studentService.getAllStudents());
     }
 
     @GetMapping("{age}")

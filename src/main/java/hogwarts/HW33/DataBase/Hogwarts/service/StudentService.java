@@ -5,6 +5,7 @@ import hogwarts.HW33.DataBase.Hogwarts.repository.StudentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,9 +31,11 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public ResponseEntity <Student> removeStudent (Long id){
-         studentRepository.deleteById(id);
-         return ResponseEntity.ok().build();
+    public  void  removeStudent (Long id){
+          studentRepository.deleteById(id);
+    }
+    public Collection<Student>getAllStudents(){
+        return studentRepository.findAll();
     }
     public List<Student> sortStudentByAge (Integer age){
         return studentRepository.sortStudentByAge(age);
