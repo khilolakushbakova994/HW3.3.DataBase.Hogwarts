@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    List<Student> sortStudentByAge (Integer age);
+    List<Student> findStudentByAge (Integer age);
 }

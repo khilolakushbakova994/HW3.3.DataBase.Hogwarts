@@ -47,7 +47,7 @@ public class FacultyController {
     }
 
     @GetMapping("{color}")
-    public List<Faculty> softFacultyByColor(@PathVariable String color) {
-        return facultyService.softFacultyByColor(color);
+    public List<Faculty> findFacultyByColor(@PathVariable String color) {
+        return facultyService.findFacultyByColor(color);
     }
 }

@@ -49,14 +49,14 @@ public class StudentController {
         studentService.removeStudent(id);
         return ResponseEntity.ok().build();
     }
-    @GetMapping
+    @GetMapping("/allStudents")
     public ResponseEntity<Collection<Student>> getAllStudents(){
         return ResponseEntity.ok(studentService.getAllStudents());
     }
 
     @GetMapping("{age}")
-    public List<Student> sortStudentByAge(@PathVariable int age) {
-        return studentService.sortStudentByAge(age);
+    public List<Student> findStudentByAge(@PathVariable int age) {
+        return studentService.findStudentByAge(age);
     }
 
 

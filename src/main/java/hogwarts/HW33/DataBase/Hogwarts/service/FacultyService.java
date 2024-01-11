@@ -35,7 +35,7 @@ public class FacultyService {
 
     }
 
-    public List<Faculty> softFacultyByColor(String color) {
-        return facultyRepository.sortFacultyByColor(color);
+    public List<Faculty> findFacultyByColor(String color) {
+        return facultyRepository.findFacultyByColor(color);
     }
 }

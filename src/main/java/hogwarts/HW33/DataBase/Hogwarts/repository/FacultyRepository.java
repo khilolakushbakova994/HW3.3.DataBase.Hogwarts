@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface FacultyRepository extends JpaRepository<Faculty, Long> {
-    List<Faculty> sortFacultyByColor (String color);
+    List<Faculty> findFacultyByColor (String color);
 }
